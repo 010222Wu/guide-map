@@ -4,7 +4,7 @@
   <view style="background: linear-gradient(45deg, #0081ff, #1cbbb4);">
     <!-- 标题栏 -->
     <view class='head' style='height: {{ titleBarHeight }}px; padding-top: {{ statusBarHeight }}px'>
-      <view class='head-item'>地图导览</view>
+      <view class='head-item'>地图导览wlz</view>
     </view>
     <!-- 菜单 -->
     <scroll-view class='menu' scroll-x="true" scroll-with-animation scroll-left="{{ scrollLeft }}">
