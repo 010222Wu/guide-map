@@ -39,3 +39,7 @@
   height: 100%;
   width: 100%;
 }
+
+.bgdc {
+  background-color: rgb(197, 225, 241) !important;
+}
