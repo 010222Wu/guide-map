@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/test/test",
+    "pages/new/new",
+    "pages/home/home",
+    "pages/index/index"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置定位与路线导航"
+    }
+  },
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

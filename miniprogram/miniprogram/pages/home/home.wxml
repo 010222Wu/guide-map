@@ -1,0 +1,57 @@
+<!--pages/home/home.wxml-->
+<view>
+  <view class='status-bar' style='height: {{statusBarHeight}}px;'></view>
+  <view class='head' style='height: {{titleBarHeight}}px;'>
+    <view class='head-item'>地图导览</view>
+  </view>
+</view>
+<view class='page-body'>
+  <!-- 菜单 -->
+  <scroll-view class='menu' scroll-x="true" style='height:{{menuHeight}}px'>
+    <view class="menu-item {{item.head == selectedMenu ? 'menu-item-select' : ''}}" wx:for="{{list}}" wx:key="index" bindtap='selectMenu' data-id="{{item.head}}" data-name="{{item.varName}}" style='height:{{menuHeight * 0.88}}px; top:{{menuHeight * 0.06}}px'>{{item.head}}</view>
+  </scroll-view>
+  <!-- 地图 -->
+  <view class='map-wrapper' style='height:{{mapHeight}}px'>
+    <map id='myMap' class='map' longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" markers="{{listItem}}" enable-rotate='true' enable-3D='true' show-location='true' bindmarkertap='getDestinationId' bindtap='outFocus'>
+      <!-- <view> class='btn'> -->
+      <!-- <image class='locate-img' bindtap='moveToLocation' src='../../img/moveToLocation.png'></image> -->
+    <van-icon name="aim" />
+        <!-- <cover-image class='locate-img' bindtap='aboutUs' src='../../img/about2.png'></cover-image> -->
+      <!-- </view> -->
+    </map>
+  </view>
+  <!-- 提示语 -->
+  <view class='hint' style='height:{{hintHeight}}px' bindtap='changeListStatus'>
+    <!-- wx:if -->
+    <view wx:if='{{!isAboutShown}}'>
+      {{hintMessage}}
+      <image src="{{arrsrc}}" class="arr"></image>
+    </view>
+    <!-- wx:else -->
+    <!--  😃 -->
+    <view class="about-us-title" wx:else>
+      关于我们
+      <!-- <image src="../../img/about2.png" class="about-us-img"></image> -->
+    </view>
+  </view>
+  <!-- 列表 -->
+  <scroll-view class='list' style='height:{{listHeight}}px' scroll-y='true' scroll-into-view="{{toView}}">
+    <!-- wx:if -->
+    <view wx:if='{{!isAboutShown}}'>
+      <view id="{{item.id}}" class="list-item {{item.id == id ? 'bgdc' : ''}}" wx:for="{{listItem}}" wx:key="index" bindtap='selectDestination' data-key="item.id">
+        <view class='navigate-text' id="{{item.id}}">{{item.title}}</view>
+        <image src="../../img/go.png" class='navigate-btn' bindtap='navigate' id="{{item.id}}"></image>
+      </view>
+      <view class='list-about-us'>中南云麓谷信息技术中心</view>
+    </view>
+    <!-- wx:else -->
+    <!-- <view class='about-us' wx:if='{{isAboutShown}}'>
+      <view class='about-us-head' animation="{{slide_up_text}}" bindtap='copyQQ'>云麓谷信息技术中心官Q</view>
+      <view class='about-us-head1' animation="{{slide_up_text}}" bindtap='copyQQ'>2420538090 点击复制</view>
+      <view class='about-us-body' animation="{{slide_up_text1}}">我们招新啦🎉🎉</view>
+      <view class='about-us-body1' animation="{{slide_up_text1}}">想学习华丽代码？</view>
+      <view class='about-us-body1' animation="{{slide_up_text1}}">想写出酷炫程序？</view>
+      <view class='about-us-body1' animation="{{slide_up_text1}}">赶紧加群快乐一下🤗</view>
+    </view> -->
+  </scroll-view>
+</view>
