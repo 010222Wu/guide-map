@@ -43,10 +43,15 @@
     <view class='list-about-us'>中南云麓谷信息技术中心</view>
   </block>
   <block wx:else>
-    <view class='hint'>{{ hintMessage }}</view>
+    <view class="hint-box">
+      <view class='hint'>{{ hintMessage }}</view>
+      <view class="arrow-down">
+        <van-icon bindtap="foldShow" slot="right-icon" name="arrow-down" color="#1c659c" size="16px" />
+      </view>
+    </view>
     <scroll-view style="max-height: {{ windowHeight * 0.4 }}px" scroll-y="true" scroll-with-animation scroll-into-view="{{ toView }}">
       <view id="{{ item.id }}" wx:for="{{ listItem }}" wx:key="index">
-        <van-cell custom-class="{{ item.id == toView ? 'bgdc' : '' }}" id="{{ item.id }}" title="{{ item.name }}" size="large" title-class="cell-title" clickable="true" data-index="{{ index }}" bindtap='selectDestination'>
+        <van-cell custom-class="{{ item.id == toView ? 'bgdc' : '' }}" id="{{ item.id }}" icon="{{ item.imgsrc }}" title="{{ item.name }}" size="large" title-class="cell-title" clickable="true" data-index="{{ index }}" bindtap='selectDestination'>
           <van-icon data-index="{{ index }}" catchtap="navigate" slot="right-icon" name="arrow" color="#1c659c" size="26px" />
         </van-cell>
       </view>

@@ -267,6 +267,15 @@ Page({
     this.includePoints()
   },
 
+/**
+   * 关闭地点列表
+   */
+  foldShow: function (e) {
+    this.setData({
+      show: false,
+    })
+  },
+
   /**
    * 列表弹出完成时触发，使scroll-view滚动到选中地点
    */

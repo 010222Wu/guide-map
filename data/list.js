@@ -506,6 +506,7 @@ var jiaoxuelou = [{
       latitude: 28.170540,
       iconPath: '../../img/location.png',
       width: 27, height: 40,
+      imgsrc: "https://7265-release-rr1dn-1301509296.tcb.qcloud.la/minzhu.jpg?sign=f942d736de05279e603c33d2869bdc3c&t=1583934978",
     },
     {
       id: 'c7',
@@ -514,6 +515,7 @@ var jiaoxuelou = [{
       latitude: 28.146980,
       iconPath: '../../img/location.png',
       width: 27, height: 40,
+      imgsrc: "https://7265-release-rr1dn-1301509296.tcb.qcloud.la/dizhi.jpg?sign=fe9de99f5849b1837eab48091cf8d877&t=1583935031",
     },
     {
       id: 'c8',
